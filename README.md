@@ -1,101 +1,97 @@
 # 🌾 Agriculture Marketing and Trading Portal with Auction System
 
-A web-based **Agriculture Marketing and Trading Portal** designed to connect farmers and buyers through a digital platform for agricultural product listing, trading, ordering, and auction-based selling.
+A full-stack web application designed to provide a digital platform for **agricultural product marketing and trading**. The system connects farmers and buyers, allowing agricultural products to be listed, viewed, and traded through an online platform.
 
-The project uses **Spring Boot** for the backend, **React.js** for the frontend, and **MySQL** for database management.
+The project also includes an **auction system** to support auction-based trading of agricultural products.
 
 ---
 
 ## 📌 Project Overview
 
-The Agriculture Marketing and Trading Portal provides a centralized platform where farmers can list their agricultural products and buyers can browse, purchase, and participate in auctions.
+Traditional agricultural trading can involve multiple intermediaries and limited access to buyers. This project aims to provide a digital marketplace where farmers can showcase their agricultural products and buyers can discover and purchase products through an online platform.
 
-The system aims to simplify agricultural trading by providing digital product management, order processing, user management, and an auction mechanism.
+The application is developed using **React.js for the frontend, Spring Boot for the backend, and MySQL for database management**.
 
 ---
 
 ## 🎯 Objectives
 
-* Provide a digital marketplace for agricultural products.
-* Allow farmers to list and manage their crops.
+* Provide an online marketplace for agricultural products.
+* Help farmers list and manage their products digitally.
 * Allow buyers to browse available agricultural products.
-* Enable buyers to place orders.
-* Provide an auction system for selected agricultural products.
-* Maintain user, crop, order, and auction information.
-* Reduce dependency on traditional intermediaries.
-* Provide a user-friendly platform for agricultural trading.
+* Support agricultural product trading.
+* Provide an auction mechanism for selected products.
+* Maintain product, user, order, and auction information.
+* Reduce dependency on traditional trading intermediaries.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
 ### 👨‍🌾 Farmer
 
 * Farmer registration and login
 * Add agricultural products
-* Update product information
-* Manage crop details
-* View orders
-* Participate in digital agricultural trading
+* Manage product information
+* View listed products
+* Manage trading-related information
 
 ### 🛒 Buyer
 
 * Buyer registration and login
 * Browse agricultural products
-* View crop details
-* Place orders
+* View product details
+* Purchase agricultural products
 * View order information
-* Participate in auctions
 
 ### 🔨 Auction System
 
-* Create agricultural product auctions
-* Set auction details
-* Allow buyers to place bids
-* Manage auction information
-* Track auction-related data
+* Create auctions for agricultural products
+* Display auction information
+* Allow buyers to participate in bidding
+* Manage auction-related information
 
 ### 📦 Order Management
 
 * Create orders
 * Store order details
-* Retrieve order information
+* View order information
 * Manage order status
 
 ### 👤 User Management
 
 * User registration
 * User information management
-* Role-based user functionality
+* Farmer and buyer roles
 
 ---
 
 ## 🏗️ System Architecture
 
 ```text
-                ┌─────────────────────────┐
-                │       React.js          │
-                │      Frontend UI        │
-                └────────────┬────────────┘
+                  ┌──────────────────────┐
+                  │      React.js        │
+                  │      Frontend        │
+                  └──────────┬───────────┘
                              │
                              │ REST API
                              ▼
-                ┌─────────────────────────┐
-                │      Spring Boot        │
-                │       Backend           │
-                ├─────────────────────────┤
-                │ Controllers             │
-                │ Services                │
-                │ Repositories            │
-                │ Models / Entities       │
-                └────────────┬────────────┘
+                  ┌──────────────────────┐
+                  │     Spring Boot      │
+                  │       Backend        │
+                  ├──────────────────────┤
+                  │ Controllers           │
+                  │ Services              │
+                  │ Repositories          │
+                  │ Entities / Models     │
+                  └──────────┬───────────┘
                              │
                              │ JPA / Hibernate
                              ▼
-                ┌─────────────────────────┐
-                │         MySQL           │
-                │        Database         │
-                └─────────────────────────┘
+                  ┌──────────────────────┐
+                  │        MySQL         │
+                  │       Database       │
+                  └──────────────────────┘
 ```
 
 ---
@@ -115,7 +111,7 @@ The system aims to simplify agricultural trading by providing digital product ma
 * Spring Boot
 * Spring Data JPA
 * Hibernate
-* REST APIs
+* REST API
 
 ### Database
 
@@ -125,11 +121,13 @@ The system aims to simplify agricultural trading by providing digital product ma
 
 * Maven
 
-### Development Tools
+### Tools
 
 * Visual Studio Code
 * Git
 * GitHub
+* Node.js
+* npm
 
 ---
 
@@ -142,35 +140,20 @@ agriculture-trading-marketing-portal/
 │   ├── public/
 │   ├── src/
 │   ├── package.json
-│   └── README.md
+│   └── ...
 │
 ├── src/
 │   └── main/
-│       └── java/
-│           └── com/
-│               └── agriportal/
-│                   ├── controller/
-│                   │   ├── CropController.java
-│                   │   ├── OrderController.java
-│                   │   └── UserController.java
-│                   │
-│                   ├── model/
-│                   │   ├── Auction.java
-│                   │   ├── Crop.java
-│                   │   ├── Order.java
-│                   │   └── User.java
-│                   │
-│                   ├── repository/
-│                   │   ├── AuctionRepository.java
-│                   │   ├── CropRepository.java
-│                   │   ├── OrderRepository.java
-│                   │   └── UserRepository.java
-│                   │
-│                   └── service/
-│                       ├── AuctionService.java
-│                       ├── CropService.java
-│                       ├── OrderService.java
-│                       └── ...
+│       ├── java/
+│       │   └── com/
+│       │       └── agriportal/
+│       │           ├── controller/
+│       │           ├── model/
+│       │           ├── repository/
+│       │           ├── service/
+│       │           └── ...
+│       │
+│       └── resources/
 │
 ├── pom.xml
 ├── .gitignore
@@ -181,31 +164,37 @@ agriculture-trading-marketing-portal/
 
 ## 🗄️ Database
 
-The application uses **MySQL** as the relational database.
+The application uses **MySQL** as the database.
 
-Main entities include:
+The database stores information related to:
 
-* User
-* Crop
-* Order
-* Auction
+* Users
+* Agricultural products
+* Orders
+* Auctions
 
-The database is used to store user information, agricultural product details, orders, and auction-related information.
+Create the database using:
+
+```sql
+CREATE DATABASE agri_db;
+```
+
+> Database credentials are not included in this repository for security reasons.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 How to Run the Project
 
 ### Prerequisites
 
-Make sure the following are installed:
+Install the following before running the project:
 
 * Java JDK
 * Maven
-* Node.js and npm
+* Node.js
+* npm
 * MySQL
 * Git
-* Visual Studio Code or another IDE
 
 ---
 
@@ -214,7 +203,7 @@ Make sure the following are installed:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Shanmugapriya005/agriculture-trading-marketing-portal.git
+git clone https://github.com/sashitika1411/agriculture-trading-marketing-portal.git
 ```
 
 ### 2. Navigate to the project
@@ -223,33 +212,33 @@ git clone https://github.com/Shanmugapriya005/agriculture-trading-marketing-port
 cd agriculture-trading-marketing-portal
 ```
 
-### 3. Configure MySQL
-
-Create a database:
+### 3. Create the MySQL database
 
 ```sql
 CREATE DATABASE agri_db;
 ```
 
-Configure your local database credentials in your local Spring Boot configuration.
+### 4. Configure the database
 
-> **Note:** Database credentials are intentionally excluded from this repository for security reasons.
+Create your local Spring Boot configuration and provide your own MySQL username and password.
 
-### 4. Run the Spring Boot application
+**Do not commit database credentials to GitHub.**
 
-Using Maven:
+### 5. Run the Spring Boot application
 
-```bash
-mvn spring-boot:run
-```
-
-Or, on Windows:
+On Windows:
 
 ```bash
 mvnw.cmd spring-boot:run
 ```
 
-The backend runs on:
+Or using Maven:
+
+```bash
+mvn spring-boot:run
+```
+
+The backend will run on:
 
 ```text
 http://localhost:8080
@@ -259,7 +248,7 @@ http://localhost:8080
 
 ## 💻 Frontend Setup
 
-Navigate to the frontend:
+Open another terminal and navigate to the frontend:
 
 ```bash
 cd agri-frontend
@@ -271,51 +260,46 @@ Install dependencies:
 npm install
 ```
 
-Start the development server:
-
-```bash
-npm start
-```
-
-If the project uses Vite, use:
+Start the frontend:
 
 ```bash
 npm run dev
 ```
 
-The terminal will display the frontend URL.
+The terminal will display the local frontend URL.
 
 ---
 
-## 🔗 Backend API
+## 🔗 Application Communication
 
-The Spring Boot backend provides REST endpoints for different modules.
-
-Example modules:
+The React frontend communicates with the Spring Boot backend through **REST APIs**.
 
 ```text
-/users
-/crops
-/orders
-/auctions
+React.js
+   │
+   │ HTTP Requests
+   ▼
+Spring Boot REST API
+   │
+   ▼
+MySQL Database
 ```
-
-The frontend communicates with the Spring Boot backend using HTTP/REST APIs.
 
 ---
 
 ## 🔐 Security
 
-Sensitive configuration files such as:
+Sensitive configuration files are excluded from GitHub using `.gitignore`.
+
+For example:
 
 ```text
-application.properties
 .env
+.env.*
+src/main/resources/application.properties
 ```
 
-are excluded from Git using `.gitignore`.
-
-**Never commit database passwords, API keys, tokens, or other secrets to GitHub.**
+This helps prevent sensitive information such as database passwords and API credentials from being committed to the repository.
 
 ---
 
@@ -324,10 +308,10 @@ are excluded from Git using `.gitignore`.
 | Module             | Description                                    |
 | ------------------ | ---------------------------------------------- |
 | User Management    | Handles user registration and user information |
-| Crop Management    | Manages agricultural products and crop details |
+| Product Management | Manages agricultural product information       |
 | Order Management   | Handles buyer orders                           |
-| Auction Management | Supports auction-based agricultural trading    |
-| Frontend           | Provides the user interface                    |
+| Auction Management | Supports auction-based trading                 |
+| Frontend           | Provides the web interface                     |
 | Database           | Stores application data                        |
 
 ---
@@ -336,34 +320,34 @@ are excluded from Git using `.gitignore`.
 
 * Online payment integration
 * Real-time auction bidding
-* Email and SMS notifications
-* Advanced search and filtering
+* Email notifications
+* SMS notifications
 * Product image upload
+* Advanced search and filtering
 * Farmer dashboard
 * Buyer dashboard
 * Order tracking
-* Rating and review system
-* Location-based farmer and buyer matching
+* Product ratings and reviews
 * Mobile application
-* Improved authentication and authorization
+* Enhanced authentication and authorization
 
 ---
 
 ## 🎓 Project Purpose
 
-This project was developed as an academic and learning project to demonstrate the development of a full-stack agricultural trading platform using **Java, Spring Boot, React.js, REST APIs, and MySQL**.
+This project was developed as an academic and practical full-stack development project to demonstrate the use of **Java, Spring Boot, React.js, REST APIs, MySQL, and Git/GitHub** in building an agricultural trading platform.
 
 ---
 
 ## 👩‍💻 Developer
 
-**Shanmugapriya005**
+**Sashitika Ravikumar**
 
-GitHub:
-https://github.com/Shanmugapriya005
+GitHub: [sashitika1411](https://github.com/sashitika1411)
 
 ---
 
 ## 📄 License
 
-This project currently does not include a specific open-source license.
+This project currently does not include an open-source license.
+
